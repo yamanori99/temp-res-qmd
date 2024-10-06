@@ -28,5 +28,8 @@
   },
   "simulation/simulation.qmd": {
     "simulation-preview.html": "a8a6ce03"
+  },
+  "others/プロジェクト設計.qmd": {
+    "プロジェクト設計-preview.html": "4ebd5ac5"
   }
 }

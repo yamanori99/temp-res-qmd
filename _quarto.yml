@@ -10,7 +10,6 @@ toc: true
 toc-location: left
 number-sections: true  # 相互参照の利用にtrueが必要
 code-fold: true  # コードを折りたたむ
-bibliography: ../references/references.bib
 csl: apa.csl
 link-citations: true
 editor: visual
@@ -23,6 +22,7 @@ format:
         # repo: github/repository
     tmeme: defaut  # other options: flatly, lumen...
     highlight-style: github
+    self-contained: true  # HTMLを1ファイルにまとめる
 
   docx: default
   # jats: default
