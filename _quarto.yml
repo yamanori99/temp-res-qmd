@@ -5,11 +5,12 @@ project:
 manuscript:
   article: index.qmd
 
+# project全体の設定
 toc: true
 toc-location: left
-number-sections: true # 相互参照の利用にtrueが必要
-code-fold: true
-bibliography: references.bib
+number-sections: true  # 相互参照の利用にtrueが必要
+code-fold: true  # コードを折りたたむ
+bibliography: ../references/references.bib
 csl: apa.csl
 link-citations: true
 editor: visual
@@ -20,7 +21,8 @@ format:
       # hypothesis: true
       # utterances: 
         # repo: github/repository
-    tmeme: flatly  # other options: default, lumen...
+    tmeme: defaut  # other options: flatly, lumen...
+    highlight-style: github
 
   docx: default
   # jats: default
@@ -30,3 +32,16 @@ format:
 
 execute:
   freeze: true  # quartoは書き出し時に各プログラムを読み込んでしまう。
+
+# チャンクオプション
+knitr: 
+  opts_chunk: 
+    dev: ragg_png  # 文字化け防止
+    dpi: 400       # 解像度
+    fig-align: center  # 図の中央揃え
+    # warning: false  # 警告メッセージ非表示
+    # message: false  # メッセージ非表示
+    # fig-path: "figures/"  # 図の保存ディレクトリ
+    # cache: true  # チャンクのキャッシュ
+    # echo: false  # コードを表示しない
+    # error: true  # エラーメッセージを表示

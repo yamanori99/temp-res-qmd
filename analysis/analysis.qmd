@@ -1,11 +1,11 @@
 ---
-title: index page
+title: analysis
 authors:
   - name: yamanori99
     # affiliation: 
     # roles: writing
     # corresponding: true
-bibliography: references/references.bib
+bibliography: ../references/references.bib
 ---
 
 # section
@@ -13,4 +13,3 @@ This is a simple placeholder for the manuscript's main document [@cochran2019].
 
 ## Section
 This is a simple placeholder for the manuscript's main document [@fujikawa2024; @natsumeda2023].
-

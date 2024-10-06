@@ -1,5 +1,6 @@
 ---
-title: "プロジェクト設計"
+title: "Memo: プロジェクト設計"
+subtitle: ChatGPTと考えたもの
 author: "yamanori99"
 date: today
 output: 
@@ -40,7 +41,7 @@ Quartoは動的なコードの実行結果を含む文書を作成すること�
 
 ## \_quarto.yml の設定
 
-```yml
+``` yml
 project:
   title: "シミュレーション分析プロジェクト"
   author: "ユーザー名"
@@ -69,7 +70,7 @@ format:
 
 各言語のコードをQuartoファイル内に動的に埋め込むことで、実行時にシミュレーションや分析が行われます。例えば、Pythonのコードブロックは次のように書きます。
 
-```python
+``` python
 import numpy as np
 # シミュレーションコード
 results = np.random.rand(10)
@@ -82,7 +83,7 @@ RやC++も同様に、Quartoを通して実行可能です。
 
 QuartoはRとPythonのコードを直接サポートしていますが、C++の場合は以下のように外部スクリプトを呼び出す方法が便利です。
 
-```zsh
+``` zsh
 g++ scripts/simulation.cpp -o simulation
 ./simulation
 ```
@@ -148,24 +149,28 @@ C++やPythonスクリプトを実行する際に、Quarto内で外部プログ�
 ``` r
 # Rでパスが通っているか確認するテスト
 
-if (!file.exists("data/mydata.csv")) { stop("データファイルが見つかりません") }
+if (!file.exists("data/mydata.csv")) {
+  stop("データファイルが見つかりません")
+}
 ```
 
 ## Quartoのresourcesオプション
 
 QuartoのYAMLでresourcesオプションを使うと、必要なファイルを特定のディレクトリに集めて処理することができます。これは特に複数のファイルを参照する場合に便利です。
 
-``` r
-format: html: resources: \["data/mydata.csv", "scripts/simulation.cpp"\]
+```yaml
+format: 
+  html: 
+    resources: \["data/mydata.csv", "scripts/simulation.cpp"\]
 ```
 
 これにより、ドキュメントのレンダリング時にこれらのリソースが確実に含まれるようになります。
 
 これらの対策を講じることで、パスの問題
 
----------------------------------------------------
+------------------------------------------------------------------------
 
-#  Cmakeを使用するときのC++コードの管理
+# Cmakeを使用するときのC++コードの管理
 
 CMakeを使用してC++のコードをコンパイルする場合、Quartoプロジェクト内での管理方法は以下のようにすることが考えられます。
 
@@ -175,7 +180,7 @@ CMakeを使用してC++のコードをコンパイルする場合、Quartoプロ
 
 scripts/CMakeLists.txtの例
 
-```cmake
+``` cmake
 cmake_minimum_required(VERSION 3.10)
 project(Simulation)
 
@@ -192,7 +197,7 @@ Quartoプロジェクト内のRやPythonのコードブロックからCMakeを�
 
 Quartoファイル内でのCMakeの使用例
 
-```bash
+``` bash
 # C++コードのコンパイル
 # CMakeでプロジェクトをビルド
 mkdir -p scripts/build
@@ -205,7 +210,7 @@ make
 
 コンパイルが完了したら、Quarto内で生成された実行可能ファイルを呼び出すことができます。以下のように、Bashのコードブロックを使って実行します。
 
-```bash
+``` bash
 # 実行ファイルの呼び出し例
 # コンパイルしたプログラムを実行
 ./scripts/build/simulation
@@ -215,7 +220,7 @@ make
 
 最終的なディレクトリ構造は次のようになります。
 
-```default
+``` default
 project-root/
 ├── data/
 ├── scripts/
@@ -231,10 +236,10 @@ project-root/
 
 ## 注意点
 
-- CMakeを使用する場合、ビルドが初めて行われる際は、`scripts/build`ディレクトリを事前に作成する必要があります。これにより、ビルドアーティファクトが整理され、プロジェクトの構造が保たれます。
+-   CMakeを使用する場合、ビルドが初めて行われる際は、`scripts/build`ディレクトリを事前に作成する必要があります。これにより、ビルドアーティファクトが整理され、プロジェクトの構造が保たれます。
 
-- `CMakeLists.txt`を適切に設定することで、依存関係やコンパイルオプションを管理できます。
+-   `CMakeLists.txt`を適切に設定することで、依存関係やコンパイルオプションを管理できます。
 
-- QuartoからCMakeを呼び出す際には、パスに注意して相対パスで指定することが重要です。
+-   QuartoからCMakeを呼び出す際には、パスに注意して相対パスで指定することが重要です。
 
 この方法を用いることで、Quartoプロジェクト内でCMakeによるC++コードの管理がスムーズに行えます。
