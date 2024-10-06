@@ -1,0 +1,32 @@
+project:
+  type: manuscript
+  output-dir: _output
+
+manuscript:
+  article: index.qmd
+
+toc: true
+toc-location: left
+number-sections: true # 相互参照の利用にtrueが必要
+code-fold: true
+bibliography: references.bib
+csl: apa.csl
+link-citations: true
+editor: visual
+
+format:
+  html:
+    comments: false # 模索中, hypothesis登録が必要?
+      # hypothesis: true
+      # utterances: 
+        # repo: github/repository
+    tmeme: flatly  # other options: default, lumen...
+
+  docx: default
+  # jats: default
+
+  # (other formats)
+  # pdf: default
+
+execute:
+  freeze: true  # quartoは書き出し時に各プログラムを読み込んでしまう。
