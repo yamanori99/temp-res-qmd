@@ -1,6 +1,6 @@
 project:
   type: manuscript
-  output-dir: _output
+  output-dir: _output/default  # Quartoの実行時に変更される
 
 manuscript:
   article: index.qmd
@@ -22,7 +22,7 @@ format:
         # repo: github/repository
     tmeme: defaut  # other options: flatly, lumen...
     highlight-style: github
-    self-contained: true  # HTMLを1ファイルにまとめる
+    self-contained: false  # HTMLを1ファイルにまとめると全体が機能しない
 
   docx: default
   # jats: default

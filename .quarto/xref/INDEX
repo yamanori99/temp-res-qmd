@@ -27,9 +27,13 @@
     "analysis.out.ipynb": "34ca5285"
   },
   "simulation/simulation.qmd": {
-    "simulation-preview.html": "a8a6ce03"
+    "simulation-preview.html": "a8a6ce03",
+    "simulation.embed.ipynb": "2e3d603a",
+    "simulation.out.ipynb": "d91a3928"
   },
   "others/プロジェクト設計.qmd": {
-    "プロジェクト設計-preview.html": "4ebd5ac5"
+    "プロジェクト設計-preview.html": "4ebd5ac5",
+    "プロジェクト設計.embed.ipynb": "4aa63fb6",
+    "プロジェクト設計.out.ipynb": "ab2b7a4f"
   }
 }
