@@ -16,13 +16,15 @@ editor: visual
 
 format:
   html:
+    grid: 
+      body-width: 1024px
+    tmeme: defaut  # other options: flatly, lumen...
+    highlight-style: github
+    self-contained: false  # HTMLを1ファイルにまとめると全体が機能しない
     comments: false # 模索中, hypothesis登録が必要?
       # hypothesis: true
       # utterances: 
         # repo: github/repository
-    tmeme: defaut  # other options: flatly, lumen...
-    highlight-style: github
-    self-contained: false  # HTMLを1ファイルにまとめると全体が機能しない
 
   docx: default
   # jats: default
